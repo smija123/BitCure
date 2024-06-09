@@ -665,6 +665,7 @@ header .header-section .header-contact .contact-call .call {
   background-color: #ffffff;
   padding: 0 20px;
   border-radius: 8px 8px 0 0;
+  border: 1px solid #6c7689;
 }
 
 @media (max-width: 768px) {
@@ -710,6 +711,7 @@ header .header-section .header-contact .contact-call .call {
 .plan-wrapper .plan-blocks .block-top .top-one p {
   font-size: 0.875rem;
   font-weight: 400;
+  color: #6c7689;
 }
 
 @media (min-width: 576px) {
@@ -738,7 +740,7 @@ header .header-section .header-contact .contact-call .call {
 
 .plan-wrapper .plan-blocks .block-top .top-two p {
   font-size: 2.625rem;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 @media (min-width: 576px) {
@@ -811,6 +813,7 @@ header .header-section .header-contact .contact-call .call {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  color: #6c7689;
 }
 
 .plan-wrapper .plan-blocks .block-top .top-three h4 {
@@ -844,7 +847,7 @@ header .header-section .header-contact .contact-call .call {
 
 .plan-wrapper .plan-blocks .block-top .top-three p {
   font-size: 2.625rem;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 @media (min-width: 576px) {
@@ -871,6 +874,10 @@ header .header-section .header-contact .contact-call .call {
   }
 }
 
+.plan-wrapper .plan-blocks .block-top .top-three span {
+  color: #6c7689;
+}
+
 @media (max-width: 768px) {
   .plan-wrapper .plan-blocks .block-top.last-block {
     min-height: 393px;
@@ -881,6 +888,7 @@ header .header-section .header-contact .contact-call .call {
   padding: 30px 20px;
   border-radius: 0 0 8px 8px;
   background-color: #317c68;
+  color: #ffffff;
 }
 
 @media (max-width: 768px) {
@@ -891,6 +899,31 @@ header .header-section .header-contact .contact-call .call {
 
 .plan-wrapper .plan-blocks .discount strong {
   display: block;
+  font-size: 1.9375rem;
+}
+
+@media (min-width: 576px) {
+  .plan-wrapper .plan-blocks .discount strong {
+    font-size: 1.9375rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .plan-wrapper .plan-blocks .discount strong {
+    font-size: 1.9375rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .plan-wrapper .plan-blocks .discount strong {
+    font-size: 1.9375rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .plan-wrapper .plan-blocks .discount strong {
+    font-size: 1.9375rem;
+  }
 }
 
 .health-service {

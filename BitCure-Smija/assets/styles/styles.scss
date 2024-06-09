@@ -230,6 +230,7 @@ header {
       background-color: $White;
       padding: 0 20px;
       border-radius: 8px 8px 0 0;
+      border: 1px solid $secondary-txt-color;
       @include breakpoint("md"){
         margin: 0px 30px;
       }
@@ -245,12 +246,13 @@ header {
         p {
           @include rem(14px);
           font-weight: 400;
+          color: $secondary-txt-color;
         }
       }
       & .top-two {
         p {
           @include rem(42px);
-          font-weight: 400;
+          font-weight: 600;
         }
         h4 {
           @include rem(18px);
@@ -264,6 +266,7 @@ header {
         justify-content: center;
         align-content: center;
         flex-direction: column;
+        color: $secondary-txt-color;
       }
       & .top-three {
         h4 {
@@ -272,7 +275,10 @@ header {
         }
         p {
           @include rem(42px);
-          font-weight: 400;
+          font-weight: 600;
+        }
+        span{
+          color: $secondary-txt-color;
         }
       }
       &.last-block{
@@ -285,11 +291,13 @@ header {
       padding: 30px 20px;
       border-radius: 0 0 8px 8px;
       background-color: $light-green;
+      color: $White;
       @include breakpoint("md"){
         margin: 0px 30px;
       }
       strong {
         display: block;
+        @include rem(31px);
       }
     }
   }
