@@ -1,0 +1,562 @@
+@import "variables.scss";
+@import "mixin.scss";
+@import "global.scss";
+//Header
+header {
+  position: sticky;
+  top: 0;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.14);
+  background-color: $White;
+  z-index: 999;
+  & .header-section {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 10px;
+    align-items: center;
+    & .header-logo {
+      img {
+        width: 160px;
+        height: auto;
+        @media only screen and (max-width: 768px) {
+          max-width: 100px;
+        }
+      }
+    }
+    & .header-contact {
+      display: flex !important;
+      gap: 12px;
+      font-size: 16px;
+      & .contact-btn {
+        & a.btn-rounded {
+          @include btn-style(#030946 /*bg*/, #ffffff /*txt*/);
+          @media only screen and (max-width: 567px) {
+            padding: 10px;
+            font-size: 12px;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            background: red;
+            height: 0;
+            transition: height 0.3s cubic-bezier(0.5, 0.62, 0.64, 0.65);
+            z-index: -1;
+          }
+        }
+      }
+      & .contact-call {
+        display: flex;
+        & .call {
+          color: #636363;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          line-height: 1;
+          @media (max-width: 768px) {
+            & span {
+              display: none;
+            }
+
+            & i {
+              background: rgb(233, 231, 231);
+              padding: 6px;
+              border-radius: 50%;
+              font-size: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//Badge
+.badge-section {
+  & .badge-wrapper {
+    background-color: $deep-twilight-blue;
+    & .badge-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include breakpoint("md") {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      & .badge-left {
+        color: $White;
+        h6 {
+          @include rem(19px);
+        }
+        h1 {
+          @include rem(55px);
+        }
+      }
+      & .badge-right {
+        .btn-badge {
+          font-weight: 500;
+          @include btn-style(#ffffff /*bg*/, #030946 /*txt*/);
+        }
+      }
+    }
+  }
+}
+//Why BitCure
+.why-bitcure {
+  & .why-wrapper {
+    background-color: $soft-frost;
+    h1 {
+      @include rem(38px);
+      color: $light-green;
+      text-align: center;
+    }
+    .learn-more {
+      text-align: center;
+      .btn-learn {
+        @include btn-style(#317c68 /*bg*/, #ffffff /*txt*/);
+      }
+    }
+    @media only screen and (min-width: 768px) {
+      img {
+        padding-right: 78px;
+      }
+    }
+    ul {
+      display: flex;
+      gap: 10px;
+      margin: 40px auto;
+      & li {
+        color: $primary-txt-color;
+        @include rem(18px);
+        font-weight: 500;
+        max-width: 362px;
+        & i {
+          color: $light-green;
+          background-color: $White;
+          padding: 20px;
+          border-radius: 5vmax;
+          display: block;
+        }
+        &:nth-child(2) {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+//Healthcare at Your Fingertips
+.health-wrapper {
+  background-color: $deep-twilight-blue;
+  h1 {
+    @include rem(38px);
+    color: $White;
+    text-align: center;
+  }
+  .health-button {
+    text-align: center;
+    .btn-health {
+      @include btn-style(#ffffff /*bg*/, $deep-twilight-blue /*txt*/);
+    }
+  }
+}
+.health-service {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 216px;
+  text-align: center;
+  gap: 50px;
+  @include breakpoint("md") {
+    grid-template-rows: 216px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  div {
+    border: 1px solid $White;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    @media only screen and (min-width:768px){
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.5) 20px 20px 30px;
+        transform: scale(1.1);
+  
+        i{
+          transform: scale(1.5) translateY(-20px);
+          i{
+            animation: bouncing 0.5s .3s; 
+          }          
+        }}
+        @keyframes bouncing {
+          from, to { transform: scale(1, 1); }
+          25% { transform: scale(0.9, 1.1); }
+          50% { transform: scale(1.1, 0.9); }
+          75% { transform: scale(0.95, 1.05); }
+        }
+    }
+   
+    i {
+      color: $bright-aqua;
+      @include rem(57px);
+      
+    }
+    & span {
+      color: $White;
+    }
+  }
+}
+//Membership Plans and Pricing
+.plan-wrapper {
+  background-color: $soft-frost;
+  h1 {
+    @include rem(38px);
+    color: $deep-twilight-blue;
+    text-align: center;
+  }
+  .plan-button {
+    text-align: center;
+    .btn-plan {
+      @include btn-style(#317c68 /*bg*/, #ffffff /*txt*/);
+    }
+  }
+  & .plan-blocks {
+    text-align: center;
+    padding: 0px;
+    & .block-top {
+      background-color: $White;
+      padding: 0 20px;
+      border-radius: 8px 8px 0 0;
+      @include breakpoint("md"){
+        margin: 0px 30px;
+      }
+      & .top {
+        border-bottom: 1px solid rgba(204, 204, 204, 0.3);
+        padding: 30px 0 20px 0;
+      }
+      & .top-one {
+        h3 {
+          @include rem(18px);
+          font-weight: 600;
+        }
+        p {
+          @include rem(14px);
+          font-weight: 400;
+        }
+      }
+      & .top-two {
+        p {
+          @include rem(42px);
+          font-weight: 400;
+        }
+        h4 {
+          @include rem(18px);
+          font-weight: 600;
+        }
+      }
+      & .top-content {
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+      }
+      & .top-three {
+        h4 {
+          @include rem(18px);
+          font-weight: 600;
+        }
+        p {
+          @include rem(42px);
+          font-weight: 400;
+        }
+      }
+      &.last-block{
+        @include breakpoint("md"){
+          min-height: 393px;
+        }
+      }
+    }
+    & .discount {
+      padding: 30px 20px;
+      border-radius: 0 0 8px 8px;
+      background-color: $light-green;
+      @include breakpoint("md"){
+        margin: 0px 30px;
+      }
+      strong {
+        display: block;
+      }
+    }
+  }
+}
+//Health
+.health-service {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 216px;
+  text-align: center;
+  gap: 50px;
+  @include breakpoint("md") {
+    grid-template-rows: 216px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  div {
+    border: 1px solid $White;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    i {
+      color: $bright-aqua;
+      @include rem(57px);
+    }
+    & span {
+      color: $White;
+    }
+  }
+}
+//Primary Care Services Available
+.primary-wrapper {
+  background-color: $deep-twilight-blue;
+  h1 {
+    @include rem(38px);
+    color: $White;
+    text-align: center;
+  }
+  h4 {
+    @include rem(17px);
+    color: $White;
+    text-align: center;
+    font-weight: 300;
+  }
+  .primary-care-button {
+    text-align: center;
+    .btn-primary-care {
+      @include btn-style(#ffffff /*bg*/, #030946 /*txt*/);
+    }
+  }
+}
+.primary-service {
+  & ul {
+    color: $White;
+    display: list-item;
+    padding-left: 40px;
+    & li {
+      list-style-type: disc !important;
+      padding-bottom: 32px;
+      &:last-child {
+        padding-bottom: 0px;
+      }
+    }
+  }
+  .first-ul {
+    border-right: 1px solid $White;
+    @include breakpoint("lg"){
+      border: none;
+      padding-bottom: 30px;
+    }
+  }
+}
+//Submit an Enquiry
+.enquiry-wrapper {
+  background-color: $White;
+  h1 {
+    @include rem(38px);
+    color: $deep-twilight-blue;
+    text-align: center;
+  }
+  h4 {
+    @include rem(17px);
+    color: $deep-twilight-blue;
+    text-align: center;
+    font-weight: 400;
+    margin: 0 auto;
+  }
+}
+.primary-service {
+  & form {
+    & .form-control {
+      padding: 13px;
+      background-color: $form-color !important;
+    }
+    &::placeholder {
+      @include rem(17px);
+      color: $placeholder-color;
+    }
+    .form-btn {
+      & .btn-form {
+        @include btn-style(#030946 /*bg*/, #ffffff /*txt*/);
+      }
+    }
+  }
+
+  & .offer-block {
+    text-align: left;
+    background-color: $deep-twilight-blue;
+    color: $White;
+    padding: 35px;
+    border-radius: 12px;
+    &:hover{
+      box-shadow: 0 4px 7px rgba(0, 0, 0, 0.14);
+    }
+    @include breakpoint("md"){
+      text-align: center;
+    }
+    h6 {
+      @include rem(19px);
+    }
+    h1 {
+      @include rem(55px);
+      color: $White;
+      text-align: left;
+      @include breakpoint("md"){
+        text-align: center;
+      }
+    }
+  }
+  & .call-block {
+    background-color: $soft-frost;
+    padding: 35px;
+    border-radius: 12px;
+    @include rem(18px);
+    font-weight: 500;
+    &:hover{
+      box-shadow: 0 4px 7px rgba(0, 0, 0, 0.14);
+    }
+    & a {
+      text-decoration: none;
+      color: $deep-twilight-blue !important;
+      & span {
+        color: $primary-txt-color !important;
+      }
+    }
+  }
+}
+//Home round image
+.rounded-image {
+  width: 100%;
+  height: 80vh;
+  clip-path: ellipse(95% 90% at 95% 50%);
+  @include breakpoint("lg"){
+    display: none;
+  }
+  @media only screen and (max-width: 1245px){
+    height: 100vh;
+  }
+}
+//Home
+.home-wrapper {
+  &:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translate(-50%, -50%);
+    background: url(../images/stars.png);
+    background-repeat: no-repeat;
+    width: 200px;
+    display: block;
+    height: 200px;
+    background-size: contain;
+    @include breakpoint("lg"){
+      display: none;
+    }
+  }
+  .home-right {
+    padding-right: 0px !important;
+  }
+  .home-left {
+    .home-content {
+      margin-left: 99px;
+      @media (max-width: 992px) {
+        margin-left: 69px;
+      }
+      @media (max-width: 768px) {
+        margin-left: 32px;
+      }
+      h1{
+        @include rem(46px);
+        font-weight: 600;
+        color: $deep-twilight-blue;
+      }
+      h4{
+        color: $light-green;
+        @include rem(22px);
+        font-weight: 600;
+      }
+      h2{
+        color: $primary-txt-color;
+        @include rem(27px);
+        font-weight: 600;
+      }
+      p{
+        color: $primary-txt-color;
+        @include rem(17px);
+        font-weight: 500;
+        &.p-last{
+          color: $light-green;
+        }
+      }
+    }
+  }
+}
+//Underline
+.underline.home-h4:after{
+  left: 0;
+    right: 100%;
+    @include breakpoint("lg"){
+      right: 0%;
+    }
+}
+.underline {
+  text-decoration: none;
+  position: relative;
+  &:after{
+    position: absolute;
+    content: '';
+    height: 4px;
+    bottom: -4px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 12%;
+    background: #008000;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border-radius: 5vmax;
+  } 
+}
+.enquiry-wrapper .underline:after , .plan-wrapper .underline:after{
+  background-color: $deep-twilight-blue;
+}
+.primary-wrapper .underline:after , .health-wrapper  .underline:after{
+  background-color: $White;
+}
+.home-wrapper .underline:after , .why-wrapper   .underline:after{
+  background-color: $light-green;
+}
+.underline:hover:after {
+  width: 80%;
+  background: $bright-aqua;
+}
+@include breakpoint("md"){
+  body{
+    text-align: center !important;
+  }
+  ul{
+    text-align: left;
+  }
+}
+.btn{
+  @include breakpoint("sm"){
+    margin-top: 30px;
+  }
+}
